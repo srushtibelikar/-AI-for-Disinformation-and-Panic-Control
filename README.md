@@ -41,19 +41,7 @@ COVID-19 Disinformation Dataset
 Custom dataset of news articles, tweets, and social media posts
 
 
-⚙️ Installation & Usage
 
-# Clone the repository
-git clone https://github.com/your-username/disinformation-panic-control.git  
-
-# Navigate to project folder
-cd disinformation-panic-control  
-
-# Install dependencies
-pip install -r requirements.txt  
-
-# Run the main script
-python main.py
 
 📊 Example Output
 
