@@ -1,8 +1,0 @@
-import pandas as pd
-
-# Example dataset (news/articles/tweets)
-df = pd.read_csv("dataset.csv")
-
-print(df.head())   # show first rows
-print(df.info())   # check dataset structure
-print(df['text'].iloc[0])  # print first text sample
