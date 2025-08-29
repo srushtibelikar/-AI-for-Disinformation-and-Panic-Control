@@ -1,0 +1,13 @@
+from textblob import TextBlob
+
+def get_sentiment(text):
+    analysis = TextBlob(text)
+    if analysis.sentiment.polarity < -0.2:
+        return "Panic / Negative"
+    elif analysis.sentiment.polarity > 0.2:
+        return "Positive / Reassuring"
+    else:
+        return "Neutral"
+
+df['sentiment'] = df['clean_text'].apply(get_sentiment)
+print(df[['clean_text','sentiment']].head())
