@@ -1,0 +1,17 @@
+import re
+import nltk
+from nltk.corpus import stopwords
+nltk.download('stopwords')
+
+stop_words = set(stopwords.words('english'))
+
+def clean_text(text):
+    text = text.lower()  # lowercase
+    text = re.sub(r"http\S+|www\S+|https\S+", '', text, flags=re.MULTILINE)  # remove links
+    text = re.sub(r'\@w+|\#','', text)  # remove mentions/hashtags
+    text = re.sub(r'[^A-Za-z\s]', '', text)  # remove special chars
+    text = " ".join([word for word in text.split() if word not in stop_words])  # remove stopwords
+    return text
+
+df['clean_text'] = df['text'].apply(clean_text)
+print(df[['text','clean_text']].head())
